@@ -45,25 +45,25 @@ if __name__ == "__main__":
     max_depth = int(sys.argv[1]) if len(sys.argv) > 1 else 10
 
     # with mlflow.start_run() as run:
-    #     clf = DecisionTreeClassifier(max_depth=max_depth)
-    #     clf.fit(train_x, train_y)
-    #     tree_rules = export_text(clf, feature_names=list(feature_names))
+    clf = DecisionTreeClassifier(max_depth=max_depth)
+    clf.fit(train_x, train_y)
+    tree_rules = export_text(clf, feature_names=list(feature_names))
 
-    #     print(f"Decision Tree Classifier (max_depth={max_depth}):")
+    print(f"Decision Tree Classifier (max_depth={max_depth}):")
 
-    #     mlflow.log_param("max_depth", max_depth)
+    print("max_depth", max_depth)
 
-    #     # predict class based on test values
-    #     test_pred_decision_tree = clf.predict(test_x)
+    # predict class based on test values
+    test_pred_decision_tree = clf.predict(test_x)
 
-    #     accuracy = metrics.accuracy_score(test_lab, test_pred_decision_tree)
-    #     mlflow.log_metric("accuracy", accuracy)
+    accuracy = metrics.accuracy_score(test_lab, test_pred_decision_tree)
+    print("accuracy", accuracy)
 
-    #     confusion_matrix = metrics.confusion_matrix(
-    #         test_lab,  test_pred_decision_tree)
+    confusion_matrix = metrics.confusion_matrix(
+        test_lab,  test_pred_decision_tree)
 
-    #     tn, fp, fn, tp = confusion_matrix.ravel()
-    #     mlflow.log_metric("true_negatives", tn)
-    #     mlflow.log_metric("false_positives", fp)
-    #     mlflow.log_metric("false_negatives", fn)
-    #     mlflow.log_metric("true_positives", tp)
+    tn, fp, fn, tp = confusion_matrix.ravel()
+    print("true_negatives", tn)
+    print("false_positives", fp)
+    print("false_negatives", fn)
+    print("true_positives", tp)
