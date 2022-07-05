@@ -1,4 +1,4 @@
 - step:
     name: train-model
     command: python train.py
-    image: scikit-learn/scikit-learn:1.1.1
+    image: scikit-learn/sklearn:1.1.1
