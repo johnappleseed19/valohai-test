@@ -1,4 +1,4 @@
 - step:
     name: train-model
     command: python train.py
-    image: sklearn/sklearn-1.1.1
+    image: valohai/notebook:sklearn-1.0
